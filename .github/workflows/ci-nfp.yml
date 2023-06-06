@@ -25,7 +25,7 @@ jobs:
 
       - name: Retrieve and build all available solutions
         run: |
-          .\Build-Sample.ps1 -Verbose .\Build-Sample -Directory .\nfp\net
+          .\Build-Sample.ps1 -Verbose -Directory .\nfp\net
         env:
           WDS_Configuration: ${{ matrix.configuration }}
           WDS_Platform: ${{ matrix.platform }}
