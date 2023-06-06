@@ -1,4 +1,4 @@
-name: Build all driver samples
+name: Build nfp
 on:
  workflow_dispatch:
     inputs:
