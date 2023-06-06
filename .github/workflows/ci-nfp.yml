@@ -1,0 +1,38 @@
+name: Build all driver samples
+on:
+ workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version'     
+        required: true
+        default: '1.0.0'
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [Debug, Release]
+        platform: [x64, arm64]
+    runs-on: windows-2022
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1.3.1
+
+      - name: Retrieve and build all available solutions
+        run: |
+          .\Build-Sample.ps1 -Verbose .\Build-Sample -Directory .\nfp\net
+        env:
+          WDS_Configuration: ${{ matrix.configuration }}
+          WDS_Platform: ${{ matrix.platform }}
+
+      - name: Archive logs
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: logs
+          path: _logs
