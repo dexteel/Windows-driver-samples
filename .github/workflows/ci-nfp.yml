@@ -30,13 +30,7 @@ jobs:
           WDS_Configuration: ${{ matrix.configuration }}
           WDS_Platform: ${{ matrix.platform }}
 
-      - name: Archive product
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: *
-          path: 
-      - name: Archive logs
+      - name: create exes
         uses: actions/upload-artifact@v3
         if: always()
         with:
