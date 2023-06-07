@@ -35,4 +35,4 @@ jobs:
         if: always()
         with:
           name: NetNfpProviderDriver
-          path: .\nfp\net\driver\x64\Debug\NetNfpProvider\
+          path: .\nfp\net\driver\x64\Release\NetNfpProvider\
