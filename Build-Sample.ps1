@@ -41,7 +41,7 @@ param(
             Position = 0)]
     [string]$Directory,
     [string]$SampleName,
-    [string]$Configuration = "Debug",
+    [string]$Configuration = "Release",
     [string]$Platform = "x64",
     $LogFilesDirectory = (Get-Location)
 )
