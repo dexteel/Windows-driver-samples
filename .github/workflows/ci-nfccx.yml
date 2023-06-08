@@ -35,4 +35,4 @@ jobs:
         if: always()
         with:
           name: NetNfpProviderDriver
-          path: c.\nfc\NfcCxSample\x64\Release\
+          path: c:\nfc\NfcCxSample\x64\Release\
