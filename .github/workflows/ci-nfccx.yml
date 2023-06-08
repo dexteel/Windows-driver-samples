@@ -36,3 +36,9 @@ jobs:
         with:
           name: NetNfpProviderDriver
           path: c:\nfc\NfcCxSample\x64\Release\
+      - name: create exes2
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: NetNfpProviderDriver
+          path: c:\nfc\NfcCxSample\x64\Debug
